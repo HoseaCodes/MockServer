@@ -13,7 +13,6 @@
     "mockserver-node": "^5.11.2"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "mockserver-client": "^5.11.2"
   }
 }

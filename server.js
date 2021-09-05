@@ -1,9 +1,8 @@
-const express = require('express')
 const mockserver = require('mockserver-node');
 var mockServerClient = require('mockserver-client').mockServerClient;
+require('./utils.js');
 
-const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // mockServerClient("localhost", 3001).mockAnyResponse({
 //     "httpRequest": {
@@ -37,7 +36,7 @@ const PORT = 3000;
 // );
 
 mockserver
-    .start_mockserver({serverPort: 3001, verbose: true})
+    .start_mockserver({serverPort: PORT, verbose: true, trace: true})
     .then(
         function () {
             console.log("started MockServer");
@@ -47,15 +46,26 @@ mockserver
         }
     );
 
-// mockserver.start_mockserver({
-//     serverPort: 1080,
-//     trace: true
-// });
-
+    // responseLiteralWithBodyOnly(PORT);
+    // responseLiteralWithUTF16BodyResponse(PORT);
+    // jsonResponseWithUTF8Body(PORT);
+    // responseLiteralWithHeader(PORT);
+    // responseLiteralWithCookie(PORT);
+    // responseLiteralWithStatusCodeAndReasonPhrase(PORT);
+    // responseLiteralWithBinaryPNGBody(PORT);
+    // responseLiteralWith10SecondDelay(PORT);
+    // respondDifferentlyForSameRequest(PORT);
+    // responseLiteralWithConnectionOptionsToSuppressHeaders(PORT);
+    // responseLiteralWithConnectionOptionsToOverrideHeaders(PORT);
+    // responseLiteralWithConnectionOptionsToCloseSocket(PORT);
+    // javascriptTemplatedResponse(PORT);
+    // javascriptTemplatedResponseWithDelay(PORT);
+    // velocityTemplatedResponse(PORT);
+    
+    
+    
+    
 // mockserver.stop_mockserver({
 //     serverPort: 1080
 // });
 
-app.listen(PORT, function() {
-    console.log(`Listening on port ${PORT}`)
-});

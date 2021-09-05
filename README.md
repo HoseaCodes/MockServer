@@ -1,6 +1,18 @@
-# Mocksever
+# Mockserver
 
 Backend testing
+
+## Run Mockserver
+
+Start local server
+
+```bash
+node server.js
+```
+
+You can also view in the browser by:
+
+- Going to http://localhost:3001/mockserver/dashboard
 
 ---
 
